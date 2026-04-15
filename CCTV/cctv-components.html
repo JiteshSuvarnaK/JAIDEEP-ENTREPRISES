@@ -283,17 +283,31 @@
     .product-card:hover .pc-link { opacity: 1; transform: translateX(0); }
 
     /* ── VALUE GRID ─────────────────────────── */
-    .value-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 36px; }
+    .value-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 36px; }
     .val-card {
-      padding: 26px 22px; border-radius: var(--radius);
-      background: #ffffff; border: 1px solid rgba(0,0,0,0.1);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+      padding: 28px 24px 26px; border-radius: var(--radius);
+      background: #ffffff; border: 1px solid rgba(0,0,0,0.09);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.07);
       transition: transform 0.28s var(--ease), border-color 0.28s, box-shadow 0.28s;
+      position: relative; overflow: hidden;
     }
-    .val-card:hover { transform: translateY(-5px); border-color: rgba(232,41,28,0.5); box-shadow: 0 20px 48px rgba(0,0,0,0.15); }
-    .val-icon { font-size: 26px; margin-bottom: 14px; }
-    .val-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: #000000; }
-    .val-desc { color: rgba(0,0,0,0.6); font-size: 13.5px; line-height: 1.65; }
+    .val-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--red-bright));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.35s var(--ease);
+    }
+    .val-card:hover { transform: translateY(-4px); border-color: rgba(232,41,28,0.2); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+    .val-card:hover::before { transform: scaleX(1); }
+    .val-icon-wrap {
+      width: 44px; height: 44px; border-radius: 11px;
+      background: rgba(232,41,28,0.08); display: grid;
+      place-items: center; margin-bottom: 18px;
+      transition: background 0.25s, transform 0.3s;
+    }
+    .val-card:hover .val-icon-wrap { background: rgba(232,41,28,0.15); transform: scale(1.08) rotate(-3deg); }
+    .val-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; color: #000000; letter-spacing: -0.01em; }
+    .val-desc { color: rgba(0,0,0,0.58); font-size: 13.5px; line-height: 1.68; }
 
     /* ── BRASS BRIDGE ─────────────────────── */
     .brass-bridge {
@@ -607,32 +621,44 @@
   </div>
   <div class="value-grid">
     <div class="val-card reveal d1">
-      <div class="val-icon">🔧</div>
+      <div class="val-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8291c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/><path d="M15.54 8.46a5 5 0 010 7.07M8.46 8.46a5 5 0 000 7.07"/></svg>
+      </div>
       <div class="val-title">Precision-Manufactured</div>
       <div class="val-desc">CNC-turned components with documented dimensional checks — the same QA discipline behind our brass export lines.</div>
     </div>
     <div class="val-card reveal d2">
-      <div class="val-icon">🔌</div>
+      <div class="val-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8291c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 7V5a2 2 0 012-2h8a2 2 0 012 2v2"/><line x1="12" y1="12" x2="12.01" y2="12"/></svg>
+      </div>
       <div class="val-title">Universal Compatibility</div>
       <div class="val-desc">Connectors and accessories compatible with Hikvision, Dahua, CP Plus, Bosch, and all major surveillance brands.</div>
     </div>
     <div class="val-card reveal d3">
-      <div class="val-icon">📦</div>
+      <div class="val-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8291c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12H19M12 5l7 7-7 7"/></svg>
+      </div>
       <div class="val-title">Ready Stock &amp; Fast Dispatch</div>
       <div class="val-desc">Standard parts available for immediate dispatch. Custom assemblies quoted within 24 hours with firm lead time commitment.</div>
     </div>
     <div class="val-card reveal d4">
-      <div class="val-icon">🏷️</div>
+      <div class="val-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8291c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 7 12 3 4 7"/><polyline points="4 7 12 11 20 7"/><polyline points="4 17 12 21 20 17"/><line x1="12" y1="11" x2="12" y2="21"/></svg>
+      </div>
       <div class="val-title">OEM &amp; Private Label</div>
       <div class="val-desc">Laser marking, branded packaging, and custom overmolds for integrators who require their own branded hardware.</div>
     </div>
     <div class="val-card reveal d5">
-      <div class="val-icon">🌧️</div>
+      <div class="val-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8291c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
       <div class="val-title">Outdoor-Ready Materials</div>
       <div class="val-desc">Anti-corrosion alloys, UV-stable plastics, and IP-rated assemblies built to handle Indian climate conditions year-round.</div>
     </div>
     <div class="val-card reveal d6">
-      <div class="val-icon">⚡</div>
+      <div class="val-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e8291c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
       <div class="val-title">Site-Ready Kitting</div>
       <div class="val-desc">We assemble and pack by site — matched cable lengths, labelled connectors, and hardware sets for faster field installation.</div>
     </div>
