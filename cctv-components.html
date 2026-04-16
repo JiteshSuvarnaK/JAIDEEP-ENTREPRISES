@@ -190,6 +190,7 @@
     .hstat-div { width: 1px; background: rgba(232,41,28,0.22); }
 
     @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
@@ -431,7 +432,7 @@
       .value-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
       .hero-stats { display: none; }
-.footer-grid { grid-template-columns: 1fr; gap: 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
     }
     @media (max-width: 640px) {
       .trust { grid-template-columns: 1fr; }
@@ -850,7 +851,7 @@
 
   /* Form submit */
   const fBtn = document.getElementById('fBtn');
-  fBtn.addEventListener('click', () => {
+  if (fBtn) fBtn.addEventListener('click', () => {
     fBtn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Sent — we\'ll respond within 24h';
     fBtn.style.background = '#27ae60';
     fBtn.style.borderColor = '#27ae60';
