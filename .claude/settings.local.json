@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk NR>=700 && NR<=750 *)",
+      "Bash(awk NR>=131 && NR<=138 *)",
+      "Bash(awk NR>=457 && NR<=463 *)",
+      "Bash(awk NR>=739 && NR<=784 *)",
+      "Bash(awk 'NR>=130 && NR<=140' \"D:/Jaideep Enterprises/new1/index.html\")",
+      "Bash(python3 *)",
+      "Bash(python *)",
+      "Bash(awk 'NR>=457 && NR<=464' \"D:/Jaideep Enterprises/new1/index.html\")"
+    ]
+  }
+}
