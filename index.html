@@ -281,8 +281,11 @@
       .footer-grid { grid-template-columns: 1fr; gap: 28px; }
       .brand img { height: 44px !important; }
     }
-    .cic-directions { display:inline-flex; align-items:center; margin-top:8px; font-size:11px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#c9a84c; text-decoration:none; opacity:0.82; transition:opacity 0.2s,letter-spacing 0.2s; }
-    .cic-directions:hover { opacity:1; letter-spacing:0.13em; }
+    .maps-embed-link { display:block; position:relative; margin-top:14px; border-radius:10px; overflow:hidden; text-decoration:none; box-shadow:0 2px 14px rgba(0,0,0,0.22); transition:box-shadow 0.22s; }
+    .maps-embed-link:hover { box-shadow:0 4px 24px rgba(0,0,0,0.38); }
+    .maps-iframe { display:block; width:100%; height:160px; border:0; pointer-events:none; filter:grayscale(18%); }
+    .maps-embed-hint { position:absolute; bottom:0; left:0; right:0; padding:10px 12px; display:flex; align-items:center; gap:7px; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#fff; background:linear-gradient(transparent,rgba(0,0,0,0.72)); transition:background 0.22s; }
+    .maps-embed-link:hover .maps-embed-hint { background:linear-gradient(transparent,rgba(0,0,0,0.88)); }
   </style>
 </head>
 <body>
@@ -377,7 +380,7 @@
       <p class="sub">Global clients across electrical, electronics, auto ancillaries, plumbing, and automotive industries. Custom components from your drawings or samples — prototype to production.</p>
       <div class="counter-row">
         <div class="counter reveal d1"><span class="cnum" data-t="27">0</span><span>Years delivering</span></div>
-        <div class="counter reveal d2"><span class="cnum" data-t="500">0</span><span>Clients served</span></div>
+        <div class="counter reveal d2"><span class="cnum" data-t="200">0</span><span>Industries</span></div>
         <div class="counter reveal d3"><span class="cnum" data-t="98">0</span><span>% On-time</span></div>
       </div>
     </div>
@@ -405,85 +408,120 @@
 
     <!-- Card source (cloned by JS into carousel + grid) -->
     <div id="cardSource" style="display:none;">
-      <article class="product-card" data-img="M2_Brass_Inserts_img.png">
+      <article class="product-card" data-img="M1.6_Brass_Inserts_Img.png">
         <div class="pc-num">01</div>
+        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+        <div class="pc-title">M1.6 Brass Inserts</div>
+        <p class="pc-desc">Ultra-fine M1.6 brass inserts for miniature plastic assemblies. Precision-machined thread form for reliable fastening in compact electronic housings.</p>
+        <a class="pc-link" href="#contact">Enquire →</a>
+      </article>
+      <article class="product-card" data-img="M2_Brass_Inserts_img.png">
+        <div class="pc-num">02</div>
         <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
         <div class="pc-title">M2 Brass Inserts</div>
         <p class="pc-desc">Precision M2 threaded brass inserts for plastic moulding. Knurled exterior for maximum pull-out strength in tight tolerances.</p>
         <a class="pc-link" href="#contact">Enquire →</a>
       </article>
+      <article class="product-card" data-img="M2.5_Brass_Inserts_Img.png">
+        <div class="pc-num">03</div>
+        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+        <div class="pc-title">M2.5 Brass Inserts</div>
+        <p class="pc-desc">M2.5 brass threaded inserts bridging M2 and M3 specifications. Knurled exterior ensures secure retention in thin-wall moulded components.</p>
+        <a class="pc-link" href="#contact">Enquire →</a>
+      </article>
       <article class="product-card" data-img="M3_Brass_Inserts_img.png">
-        <div class="pc-num">02</div>
+        <div class="pc-num">04</div>
         <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
         <div class="pc-title">M3 Brass Inserts</div>
         <p class="pc-desc">M3 brass threaded inserts for injection-moulded components. Heat-set and press-fit compatible with standard tooling.</p>
         <a class="pc-link" href="#contact">Enquire →</a>
       </article>
+      <article class="product-card" data-img="M3.5_Brass_Inserts_Img.png">
+        <div class="pc-num">05</div>
+        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+        <div class="pc-title">M3.5 Brass Inserts</div>
+        <p class="pc-desc">M3.5 brass inserts for applications requiring a step between M3 and M4. Heat-set and press-fit compatible with precise dimensional control.</p>
+        <a class="pc-link" href="#contact">Enquire →</a>
+      </article>
       <article class="product-card" data-img="M4_Brass_Inserts_img.png">
-        <div class="pc-num">03</div>
+        <div class="pc-num">06</div>
         <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
         <div class="pc-title">M4 Brass Inserts</div>
         <p class="pc-desc">M4 brass inserts for medium-load applications in plastic housings. Uniform thread profile ensures consistent assembly torque.</p>
         <a class="pc-link" href="#contact">Enquire →</a>
       </article>
       <article class="product-card" data-img="M5_Brass_Inserts_img.png">
-        <div class="pc-num">04</div>
+        <div class="pc-num">07</div>
         <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
         <div class="pc-title">M5 Brass Inserts</div>
         <p class="pc-desc">M5 brass moulding inserts with knurled body for superior grip. Suited for high-cycle assembly in electrical and industrial enclosures.</p>
         <a class="pc-link" href="#contact">Enquire →</a>
       </article>
       <article class="product-card" data-img="M6_Brass_Inserts_img.png">
-        <div class="pc-num">05</div>
+        <div class="pc-num">08</div>
         <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
         <div class="pc-title">M6 Brass Inserts</div>
         <p class="pc-desc">M6 brass threaded inserts for robust fastening in moulded plastic panels. Available in standard and flanged configurations.</p>
         <a class="pc-link" href="#contact">Enquire →</a>
       </article>
       <article class="product-card" data-img="M8_Brass_Inserts_img.png">
-        <div class="pc-num">06</div>
+        <div class="pc-num">09</div>
         <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
         <div class="pc-title">M8 Brass Inserts</div>
         <p class="pc-desc">Heavy-duty M8 brass inserts for structural plastic assemblies. High torque resistance with precision-machined thread form.</p>
         <a class="pc-link" href="#contact">Enquire →</a>
       </article>
-      <article class="product-card" data-img="Brass_studs_img.png">
-        <div class="pc-num">07</div>
-        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><line x1="12" y1="2" x2="12" y2="22"/><rect x="8" y="6" width="8" height="4" rx="1"/><rect x="8" y="14" width="8" height="4" rx="1"/></svg></div>
-        <div class="pc-title">Brass Studs</div>
-        <p class="pc-desc">Precision brass studs for press-fit and moulded-in applications. Custom lengths and thread specifications available to drawing.</p>
-        <a class="pc-link" href="#contact">Enquire →</a>
-      </article>
-      <article class="product-card" data-img="Heat_Insertion_Press_Fit_Inserts.img.png">
-        <div class="pc-num">08</div>
-        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><path d="M12 2a5 5 0 010 10 5 5 0 010-10z"/><path d="M12 12v10M8 18h8"/></svg></div>
-        <div class="pc-title">Heat Insertion / Press Fit Inserts</div>
-        <p class="pc-desc">Ultrasonic and heat-set brass inserts for thermoplastic components. Optimal knurl pattern for pull-out and torque resistance.</p>
-        <a class="pc-link" href="#contact">Enquire →</a>
-      </article>
       <article class="product-card" data-img="M18_Brass_Inserts_img.png">
-        <div class="pc-num">09</div>
+        <div class="pc-num">10</div>
         <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
         <div class="pc-title">M18 Brass Inserts</div>
         <p class="pc-desc">M18 brass inserts for heavy-load plastic assemblies. Precision-knurled body ensures reliable pull-out resistance in structural enclosures.</p>
         <a class="pc-link" href="#contact">Enquire →</a>
       </article>
       <article class="product-card" data-img="M22_Brass_Inserts_img.png">
-        <div class="pc-num">10</div>
+        <div class="pc-num">11</div>
         <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
         <div class="pc-title">M22 Brass Inserts</div>
         <p class="pc-desc">M22 large-diameter brass inserts for industrial plastic components. Ideal for high-torque fastening in structural enclosures and machinery housings.</p>
         <a class="pc-link" href="#contact">Enquire →</a>
       </article>
       <article class="product-card" data-img="M30_Brass_Inserts_img.png">
-        <div class="pc-num">11</div>
+        <div class="pc-num">12</div>
         <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
         <div class="pc-title">M30 Brass Inserts</div>
         <p class="pc-desc">M30 heavy-duty brass inserts for robust structural assemblies. Maximum thread engagement for the highest torque and pull-out resistance requirements.</p>
         <a class="pc-link" href="#contact">Enquire →</a>
       </article>
+      <article class="product-card" data-img="6by32 UNC Inserts.png">
+        <div class="pc-num">13</div>
+        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><path d="M12 2l9.33 5.33v10.67L12 23.33 2.67 18V7.33z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="pc-title">6/32 UNC Inserts</div>
+        <p class="pc-desc">6/32 UNC brass inserts for American-standard threaded assemblies. Full compatibility with inch-series fasteners in electronics and instrumentation enclosures.</p>
+        <a class="pc-link" href="#contact">Enquire →</a>
+      </article>
+      <article class="product-card" data-img="5by16-18 UNC Inserts.png">
+        <div class="pc-num">14</div>
+        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><path d="M12 2l9.33 5.33v10.67L12 23.33 2.67 18V7.33z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="pc-title">5/16-18 UNC Inserts</div>
+        <p class="pc-desc">5/16-18 UNC brass inserts for heavy-duty inch-threaded applications. Robust knurl profile for maximum pull-out and torque resistance in structural plastic components.</p>
+        <a class="pc-link" href="#contact">Enquire →</a>
+      </article>
+      <article class="product-card" data-img="Brass_studs_img.png">
+        <div class="pc-num">15</div>
+        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><line x1="12" y1="2" x2="12" y2="22"/><rect x="8" y="6" width="8" height="4" rx="1"/><rect x="8" y="14" width="8" height="4" rx="1"/></svg></div>
+        <div class="pc-title">Brass Studs</div>
+        <p class="pc-desc">Precision brass studs for press-fit and moulded-in applications. Custom lengths and thread specifications available to drawing.</p>
+        <a class="pc-link" href="#contact">Enquire →</a>
+      </article>
+      <article class="product-card" data-img="Heat_Insertion_Press_Fit_Inserts.img.png">
+        <div class="pc-num">16</div>
+        <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><path d="M12 2a5 5 0 010 10 5 5 0 010-10z"/><path d="M12 12v10M8 18h8"/></svg></div>
+        <div class="pc-title">Heat Insertion / Press Fit Inserts</div>
+        <p class="pc-desc">Ultrasonic and heat-set brass inserts for thermoplastic components. Optimal knurl pattern for pull-out and torque resistance.</p>
+        <a class="pc-link" href="#contact">Enquire →</a>
+      </article>
       <article class="product-card" data-img="Custom_Design_img.png">
-        <div class="pc-num">12</div>
+        <div class="pc-num">17</div>
         <div class="pc-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="1.8"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
         <div class="pc-title">Custom Design</div>
         <p class="pc-desc">Bespoke brass components manufactured to your drawing or sample. Full CAD/CAM support, tight tolerances, and bulk capacity for OEM schedules.</p>
@@ -516,7 +554,7 @@
       <h2 class="title" style="margin:14px 0 14px;">Precision, documentation,<br>and responsiveness.</h2>
       <p class="sub" style="margin-bottom:28px;">We engineer for repeatability: CMM checks, gauge-calibrated lines, and export packing tuned to each market. Our 85%+ repeat client rate speaks for itself.</p>
       <div class="counter-row">
-        <div class="counter reveal d1"><span class="cnum" data-t="500">0</span><span>Clients served</span></div>
+        <div class="counter reveal d1"><span class="cnum" data-t="200">0</span><span>Industries</span></div>
         <div class="counter reveal d2"><span class="cnum" data-t="5">0</span><span>M pcs monthly</span></div>
         <div class="counter reveal d3"><span class="cnum" id="rfqHrCount" data-t="48">0</span><span>Hr RFQ response</span></div>
       </div>
@@ -621,7 +659,10 @@
             <div>
               <div class="cic-label">Registered Office</div>
               <div class="cic-val">#12, 2nd Floor, No.6, Electronic Plaza,<br>3rd Cross (P.R. Lane), S.P Road,<br>Bangalore – 560 002</div>
-              <a href="https://maps.app.goo.gl/Pp19E1NhWgFfdE5W7" target="_blank" rel="noopener" class="cic-directions"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-right:5px;vertical-align:-1px"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>Get Directions</a>
+              <a href="https://maps.app.goo.gl/QAAuqc58aT2NBiEv5" target="_blank" rel="noopener" class="maps-embed-link">
+                <iframe src="https://maps.google.com/maps?q=Electronic+Plaza,+S.P+Road,+Bangalore+560002,+India&output=embed" class="maps-iframe" loading="lazy" allowfullscreen></iframe>
+                <div class="maps-embed-hint"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg> Open in Google Maps</div>
+              </a>
             </div>
           </div>
           <div class="cic-method">
@@ -713,17 +754,22 @@
     <div>
       <div class="f-col-title">Products</div>
       <ul class="f-links">
+        <li><a href="#products" onclick="expandProducts()">M1.6 Brass Inserts</a></li>
         <li><a href="#products" onclick="expandProducts()">M2 Brass Inserts</a></li>
+        <li><a href="#products" onclick="expandProducts()">M2.5 Brass Inserts</a></li>
         <li><a href="#products" onclick="expandProducts()">M3 Brass Inserts</a></li>
+        <li><a href="#products" onclick="expandProducts()">M3.5 Brass Inserts</a></li>
         <li><a href="#products" onclick="expandProducts()">M4 Brass Inserts</a></li>
         <li><a href="#products" onclick="expandProducts()">M5 Brass Inserts</a></li>
         <li><a href="#products" onclick="expandProducts()">M6 Brass Inserts</a></li>
         <li><a href="#products" onclick="expandProducts()">M8 Brass Inserts</a></li>
-        <li><a href="#products" onclick="expandProducts()">Brass Studs</a></li>
-        <li><a href="#products" onclick="expandProducts()">Heat Insertion / Press Fit Inserts</a></li>
         <li><a href="#products" onclick="expandProducts()">M18 Brass Inserts</a></li>
         <li><a href="#products" onclick="expandProducts()">M22 Brass Inserts</a></li>
         <li><a href="#products" onclick="expandProducts()">M30 Brass Inserts</a></li>
+        <li><a href="#products" onclick="expandProducts()">6/32 UNC Inserts</a></li>
+        <li><a href="#products" onclick="expandProducts()">5/16-18 UNC Inserts</a></li>
+        <li><a href="#products" onclick="expandProducts()">Brass Studs</a></li>
+        <li><a href="#products" onclick="expandProducts()">Heat Insertion / Press Fit Inserts</a></li>
         <li><a href="#products" onclick="expandProducts()">Custom Design</a></li>
         <li><a href="cctv-components.html">→ CCTV Components Page</a></li>
       </ul>
@@ -743,7 +789,7 @@
         <li><a href="tel:+916362604046">+91 63626 04046</a></li>
         <li><a href="tel:+919343735699">+91 93437 35699</a></li>
         <li><a href="mailto:support@jaideepenterprises.com">support@jaideepenterprises.com</a></li>
-        <li><a href="https://maps.app.goo.gl/Pp19E1NhWgFfdE5W7" target="_blank" rel="noopener">S.P Road, Bangalore – 560 002 ↗</a></li>
+        <li><a href="https://maps.app.goo.gl/QAAuqc58aT2NBiEv5" target="_blank" rel="noopener">S.P Road, Bangalore – 560 002 ↗</a></li>
         <li><a href="#contact">Jamnagar, Gujarat – 361 005</a></li>
       </ul>
     </div>
