@@ -1598,13 +1598,13 @@
     <div>
             <div class="f-col-title">Components</div>
       <ul class="f-links">
-        <li><a href="#parts">Cables</a></li>
-        <li><a href="#parts">Connectors</a></li>
-        <li><a href="#parts">Enclosures</a></li>
-        <li><a href="#parts">Junction Boxes</a></li>
-        <li><a href="#parts">Networking Series</a></li>
-        <li><a href="#parts">Power Supplies</a></li>
-        <li><a href="#parts">Stands &amp; Mounts</a></li>
+        <li><a href="#parts" data-goto-cat="cables">Cables</a></li>
+        <li><a href="#parts" data-goto-cat="connectors">Connectors</a></li>
+        <li><a href="#parts" data-goto-cat="enclosures">Enclosures</a></li>
+        <li><a href="#parts" data-goto-cat="junction-boxes">Junction Boxes</a></li>
+        <li><a href="#parts" data-goto-cat="networking">Networking Series</a></li>
+        <li><a href="#parts" data-goto-cat="power">Power Supplies</a></li>
+        <li><a href="#parts" data-goto-cat="stands-mounts">Stands &amp; Mounts</a></li>
       </ul>
     </div>
     <div>
@@ -1696,6 +1696,28 @@
       }, { threshold: 0.08 });
       secIO.observe(partsSection);
     }
+
+    function switchToCategory(cat) {
+      var targetTab = document.querySelector('.cat-tab[data-cat="' + cat + '"]');
+      if (!targetTab) return;
+      tabs.forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      targetTab.classList.add('active');
+      targetTab.setAttribute('aria-selected', 'true');
+      panels.forEach(function (p) { p.classList.remove('active'); });
+      var targetPanel = document.getElementById('panel-' + cat);
+      if (targetPanel) { targetPanel.classList.add('active'); animateCards(targetPanel); }
+    }
+
+    // Footer deep-links: clicking a category link scrolls to #parts and opens that tab
+    document.querySelectorAll('a[data-goto-cat]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var cat = link.getAttribute('data-goto-cat');
+        switchToCategory(cat);
+        var target = document.getElementById('parts');
+        if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      });
+    });
   }());
 
 
