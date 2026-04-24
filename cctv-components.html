@@ -568,6 +568,155 @@
       transition:gap 0.22s,color 0.22s;
     }
     .pcv2-cta:hover { gap:10px; color:var(--red-bright); }
+
+    /* ── Supply Standard Section ── */
+    .supply-std-section {
+      background: #060606;
+      padding: 90px 5vw 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .supply-std-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(232,41,28,0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .supply-std-head {
+      max-width: 780px;
+      margin: 0 auto 64px;
+      text-align: center;
+    }
+    .supply-std-head .kicker { letter-spacing: .15em; }
+    .supply-std-h2 {
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin: 16px 0 20px;
+    }
+    .supply-std-h2 span { color: #e8291c; }
+    .supply-std-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.52);
+      line-height: 1.7;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .supply-feat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      max-width: 1220px;
+      margin: 0 auto 72px;
+    }
+    @media (max-width: 900px) {
+      .supply-feat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .supply-feat-grid { grid-template-columns: 1fr; }
+    }
+    .supply-feat-card {
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 32px 28px 30px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+      opacity: 0;
+      transform: translateY(32px);
+    }
+    .supply-feat-card.sf-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .supply-feat-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #e8291c, #ff6b57);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .32s ease;
+    }
+    .supply-feat-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(232,41,28,0.3);
+      box-shadow: 0 16px 48px rgba(232,41,28,0.12);
+    }
+    .supply-feat-card:hover::after { transform: scaleX(1); }
+    .sfc-icon {
+      width: 48px; height: 48px;
+      background: rgba(232,41,28,0.12);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 22px;
+      transition: background .28s;
+    }
+    .supply-feat-card:hover .sfc-icon { background: rgba(232,41,28,0.22); }
+    .sfc-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      letter-spacing: .01em;
+    }
+    .sfc-desc {
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.48);
+      line-height: 1.65;
+    }
+    /* Marquee strip */
+    .compat-strip {
+      max-width: 1220px;
+      margin: 0 auto;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+    }
+    .compat-label {
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .compat-track {
+      display: flex;
+      gap: 0;
+      animation: marquee-scroll 26s linear infinite;
+      width: max-content;
+    }
+    .compat-strip:hover .compat-track { animation-play-state: paused; }
+    .compat-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 36px;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: .04em;
+      transition: color .2s;
+    }
+    .compat-item:hover { color: rgba(255,255,255,0.72); }
+    .compat-dot {
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: rgba(232,41,28,0.5);
+      flex-shrink: 0;
+    }
+    @keyframes marquee-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
   </style>
 </head>
 <body>
@@ -1183,24 +1332,86 @@
   </div>
 </section>
 
-<!-- ═══ IMAGE SHOWCASE ══════════════════════════ -->
-<section style="background:#000000;padding:0 5vw 90px;">
-  <div style="max-width:1220px;margin:0 auto;">
-    <div class="sec-title-card" style="margin-bottom:32px;">
-      <div class="kicker">Deployed &amp; Trusted</div>
-      <h2 class="title" style="margin:12px 0 0;color:#fff;">Trusted by installers<br><span style="color:#e8291c;">across 1,000+ surveillance sites.</span></h2>
+<!-- ═══ SUPPLY STANDARD ══════════════════════════ -->
+<section class="supply-std-section">
+  <div class="supply-std-head reveal">
+    <div class="kicker">Built to Spec. Shipped to Site.</div>
+    <h2 class="supply-std-h2">The hardware every<br><span>surveillance system runs on.</span></h2>
+    <p class="supply-std-sub">From the connector at the camera head to the junction box on the wall — Jaideep components are engineered for long-cycle reliability, tight tolerances, and field-ready performance.</p>
+  </div>
+
+  <div class="supply-feat-grid">
+
+    <div class="supply-feat-card">
+      <div class="sfc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8291c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </div>
+      <div class="sfc-title">Ready Stock, Always</div>
+      <div class="sfc-desc">All 41 SKUs stocked in Bangalore. No backorders, no lead-time surprises — same-week dispatch on bulk orders.</div>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;grid-template-rows:220px 220px;gap:10px;border-radius:14px;overflow:hidden;">
-      <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=700&q=80" alt="CCTV Surveillance System" loading="lazy" style="width:100%;height:100%;object-fit:cover;grid-column:span 2;filter:brightness(0.88);" />
-      <img src="https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=500&q=80" alt="Security Camera Installation" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.88);" />
-      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=80" alt="Electronic Connectors" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.88);" />
-      <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=500&q=80" alt="Precision Manufacturing" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.88);" />
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Brass Components Precision" loading="lazy" style="width:100%;height:100%;object-fit:cover;grid-column:span 2;filter:brightness(0.88);" />
-      <img src="https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?w=500&q=80" alt="CCTV Camera Mounting" loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.88);" />
+
+    <div class="supply-feat-card">
+      <div class="sfc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8291c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+        </svg>
+      </div>
+      <div class="sfc-title">24h RFQ Response</div>
+      <div class="sfc-desc">Send a quote request and get pricing, availability, and datasheet back within one business day — every time.</div>
+    </div>
+
+    <div class="supply-feat-card">
+      <div class="sfc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8291c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <div class="sfc-title">Field-Proven Grade</div>
+      <div class="sfc-desc">Every connector, mount, and enclosure passes ingress, vibration, and cycle-life testing before it leaves the factory floor.</div>
+    </div>
+
+    <div class="supply-feat-card">
+      <div class="sfc-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8291c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2"/><line x1="12" y1="12" x2="12" y2="16"/>
+        </svg>
+      </div>
+      <div class="sfc-title">OEM White-Label</div>
+      <div class="sfc-desc">Custom branding, private-label packaging, and MOQ-flexible OEM orders available — from 500 pcs upward.</div>
+    </div>
+
+  </div><!-- /supply-feat-grid -->
+
+  <div class="compat-label reveal">Compatible with leading brands</div>
+  <div class="compat-strip reveal">
+    <div class="compat-track">
+      <span class="compat-item"><span class="compat-dot"></span>Hikvision</span>
+      <span class="compat-item"><span class="compat-dot"></span>Dahua</span>
+      <span class="compat-item"><span class="compat-dot"></span>CP Plus</span>
+      <span class="compat-item"><span class="compat-dot"></span>Uniview</span>
+      <span class="compat-item"><span class="compat-dot"></span>Bosch</span>
+      <span class="compat-item"><span class="compat-dot"></span>Axis</span>
+      <span class="compat-item"><span class="compat-dot"></span>Hanwha</span>
+      <span class="compat-item"><span class="compat-dot"></span>Tiandy</span>
+      <span class="compat-item"><span class="compat-dot"></span>Pelco</span>
+      <span class="compat-item"><span class="compat-dot"></span>Honeywell</span>
+      <!-- duplicate for seamless loop -->
+      <span class="compat-item"><span class="compat-dot"></span>Hikvision</span>
+      <span class="compat-item"><span class="compat-dot"></span>Dahua</span>
+      <span class="compat-item"><span class="compat-dot"></span>CP Plus</span>
+      <span class="compat-item"><span class="compat-dot"></span>Uniview</span>
+      <span class="compat-item"><span class="compat-dot"></span>Bosch</span>
+      <span class="compat-item"><span class="compat-dot"></span>Axis</span>
+      <span class="compat-item"><span class="compat-dot"></span>Hanwha</span>
+      <span class="compat-item"><span class="compat-dot"></span>Tiandy</span>
+      <span class="compat-item"><span class="compat-dot"></span>Pelco</span>
+      <span class="compat-item"><span class="compat-dot"></span>Honeywell</span>
     </div>
   </div>
-</section>
 
+</section>
 <!-- ═══ VALUE PROPOSITION ══════════════════════ -->
 <section class="section shell" id="value">
   <div class="reveal sec-title-card">
@@ -1532,6 +1743,21 @@
       }, 3500);
     });
   }
+
+  // Supply Standard cards stagger-in
+  (function () {
+    var cards = document.querySelectorAll('.supply-feat-card');
+    if (!cards.length) return;
+    var obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('sf-in'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    cards.forEach(function (c, i) {
+      c.style.transition = 'opacity .45s ease ' + (i * 0.1) + 's, transform .45s ease ' + (i * 0.1) + 's, border-color .28s ease, box-shadow .28s ease';
+      obs.observe(c);
+    });
+  }());
 </script>
 </body>
 </html>
