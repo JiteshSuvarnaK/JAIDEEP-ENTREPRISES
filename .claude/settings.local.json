@@ -9,7 +9,12 @@
       "Bash(python3 *)",
       "Bash(python *)",
       "Bash(awk 'NR>=457 && NR<=464' \"D:/Jaideep Enterprises/new1/index.html\")",
-      "Bash(awk NR>=395 && NR<=465 *)"
+      "Bash(awk NR>=395 && NR<=465 *)",
+      "Bash(git add *)",
+      "Bash(git rm *)",
+      "Bash(git commit -m ' *)",
+      "Bash(sed -n '1330,1345p' \"D:\\\\Jaideep Enterprises\\\\new1\\\\cctv-components.html\")",
+      "Bash(sed -n '1395,1415p' \"D:\\\\Jaideep Enterprises\\\\new1\\\\cctv-components.html\")"
     ]
   }
 }
