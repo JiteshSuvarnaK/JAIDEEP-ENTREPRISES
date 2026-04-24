@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jaideep Enterprises — Precision Brass Components &amp; Export Partner</title>
   <meta name="description" content="27+ years of precision brass components. Bangalore HQ, Jamnagar production. Brass inserts, turned parts, AV connectors, custom components. Export-ready, dimensional accuracy, competitive pricing."/>
+  <!-- SEO: Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Jaideep Enterprises" />
+  <meta property="og:title"       content="Precision Brass Components &amp; OEM Export Partner | Jaideep Enterprises" />
+  <meta property="og:description" content="27+ years of precision brass manufacturing. Brass inserts M1.6–M30, studs, heat-insertion &amp; press-fit inserts. ±0.02mm tolerance, 5M+ pcs/month. Bangalore HQ, Jamnagar production." />
+  <meta property="og:url"         content="https://jaideepenterprises.com/" />
+  <meta property="og:image"       content="https://jaideepenterprises.com/Hero_img.jpg" />
+  <meta property="og:locale"      content="en_IN" />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Precision Brass Components &amp; OEM Export Partner | Jaideep Enterprises" />
+  <meta name="twitter:description" content="27+ years of precision brass manufacturing. Brass inserts, studs, heat-insertion &amp; press-fit inserts. ±0.02mm tolerance, export-ready." />
+  <meta name="twitter:image"       content="https://jaideepenterprises.com/Hero_img.jpg" />
+  <!-- SEO: Canonical + Robots -->
+  <link rel="canonical" href="https://jaideepenterprises.com/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="brass inserts, brass components, precision brass manufacturing, OEM brass parts, heat insertion inserts, press fit inserts, brass studs, Bangalore manufacturer, export brass components" />
+  <meta name="author" content="Jaideep Enterprises" />
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap" rel="stylesheet"/>
@@ -286,7 +304,129 @@
     .maps-iframe { display:block; width:100%; height:160px; border:0; pointer-events:none; filter:grayscale(18%); }
     .maps-embed-hint { position:absolute; bottom:0; left:0; right:0; padding:10px 12px; display:flex; align-items:center; gap:7px; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:#fff; background:linear-gradient(transparent,rgba(0,0,0,0.72)); transition:background 0.22s; }
     .maps-embed-link:hover .maps-embed-hint { background:linear-gradient(transparent,rgba(0,0,0,0.88)); }
+
+    /* ── Back to top ── */
+    #btt {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 44px; height: 44px;
+      background: var(--gold);
+      border: none; border-radius: 50%;
+      color: #000;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      opacity: 0; transform: translateY(14px);
+      transition: opacity .3s ease, transform .3s ease, background .2s;
+      z-index: 890;
+      box-shadow: 0 4px 18px rgba(201,168,76,0.4);
+    }
+    #btt.btt-show { opacity: 1; transform: translateY(0); }
+    #btt:hover { background: var(--gold-soft); }
+
+    /* ── Lightbox ── */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      cursor: zoom-out;
+      padding: 20px;
+    }
+    #lightbox.lb-open { display: flex; }
+    #lb-img {
+      max-width: 88vw;
+      max-height: 78vh;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 32px 96px rgba(0,0,0,0.8);
+      cursor: default;
+      animation: lb-in .22s ease;
+    }
+    #lb-caption {
+      margin-top: 14px;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: .05em;
+      text-align: center;
+      max-width: 500px;
+    }
+    #lb-close {
+      position: fixed;
+      top: 18px; right: 22px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 50%;
+      width: 38px; height: 38px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      transition: background .2s;
+    }
+    #lb-close:hover { background: rgba(255,255,255,0.22); }
+    @keyframes lb-in {
+      from { opacity:0; transform:scale(0.93); }
+      to   { opacity:1; transform:scale(1); }
+    }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://jaideepenterprises.com/#business",
+        "name": "Jaideep Enterprises",
+        "description": "Precision brass components manufacturer and exporter since 1999. Specialising in brass inserts (M1.6–M30), brass studs, heat-insertion and press-fit inserts for OEMs. ±0.02mm tolerance, 5M+ pieces per month.",
+        "url": "https://jaideepenterprises.com/",
+        "telephone": ["+916362604046", "+919343735699"],
+        "email": "support@jaideepenterprises.com",
+        "foundingDate": "1999",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "#12, 2nd Floor, No.6, Electronic(s) Plaza, 3rd Cross (P.R. Lane), S.P Road",
+          "addressLocality": "Bangalore",
+          "postalCode": "560002",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        },
+        "areaServed": ["IN", "Worldwide"],
+        "priceRange": "$$",
+        "image": "https://jaideepenterprises.com/Hero_img.jpg",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Precision Brass Components",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Brass Threaded Inserts M1.6–M30" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Brass Studs" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Heat Insertion Inserts" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Press Fit Inserts" } }
+          ]
+        }
+      },
+      {
+        "@type": "Organization",
+        "name": "Jaideep Enterprises",
+        "url": "https://jaideepenterprises.com/",
+        "logo": "https://jaideepenterprises.com/main_logo_img.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+916362604046",
+          "contactType": "sales",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Hindi", "Kannada"]
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -1001,6 +1141,88 @@
       fBtn.style.background = ''; fBtn.style.borderColor = ''; fBtn.disabled = false;
     }, 3500);
   });
+
+  // ── Lightbox ────────────────────────────────────────────────────
+  (function () {
+    var lb    = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lb-img');
+    var lbCap = document.getElementById('lb-caption');
+    function openLb(src, caption) {
+      lbImg.src = src;
+      lbCap.textContent = caption || '';
+      lb.classList.add('lb-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLb() {
+      lb.classList.remove('lb-open');
+      document.body.style.overflow = '';
+      setTimeout(function () { lbImg.src = ''; }, 250);
+    }
+    document.getElementById('lb-close').addEventListener('click', closeLb);
+    lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lb.classList.contains('lb-open')) closeLb();
+    });
+    // Expose so page-specific code can call openLb
+    window._openLightbox = openLb;
+  }());
+
+  // Wire lightbox to brass product images (event delegation for JS-built cards)
+  (function () {
+    function attachLb(container) {
+      if (!container) return;
+      container.addEventListener('click', function (e) {
+        var img = e.target.closest('.pc-product-img');
+        if (!img) return;
+        e.stopPropagation();
+        var card = img.closest('.product-card');
+        var name = card ? (card.querySelector('.pc-title') || {}).textContent || '' : '';
+        var spec = card ? (card.querySelector('.pc-spec') || card.querySelector('.pc-sub') || {}).textContent || '' : '';
+        window._openLightbox(img.src, name + (spec ? '  ·  ' + spec : ''));
+      });
+    }
+    attachLb(document.getElementById('allProductsGrid'));
+    attachLb(document.querySelector('.carousel-track'));
+    // Also catch images added after this runs (re-attach if grid rebuilt)
+    var observer = new MutationObserver(function (muts) {
+      muts.forEach(function (m) {
+        m.addedNodes.forEach(function (n) {
+          if (n.nodeType === 1) {
+            n.querySelectorAll('.pc-product-img').forEach(function (img) {
+              img.style.cursor = 'zoom-in';
+            });
+          }
+        });
+      });
+    });
+    var grid = document.getElementById('allProductsGrid');
+    var track = document.querySelector('.carousel-track');
+    if (grid)  observer.observe(grid,  { childList: true, subtree: true });
+    if (track) observer.observe(track, { childList: true, subtree: true });
+  }());
+
+  // ── Back to top ─────────────────────────────────────────────────
+  (function () {
+    var btn = document.getElementById('btt');
+    window.addEventListener('scroll', function () {
+      btn.classList.toggle('btt-show', window.scrollY > 420);
+    }, { passive: true });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }());
 </script>
+
+<!-- Back to top -->
+<button id="btt" aria-label="Back to top" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- Lightbox overlay -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Product image viewer">
+  <button id="lb-close" aria-label="Close">&#x2715;</button>
+  <img id="lb-img" src="" alt="" />
+  <div id="lb-caption"></div>
+</div>
 </body>
 </html>

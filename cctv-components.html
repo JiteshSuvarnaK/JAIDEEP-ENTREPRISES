@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CCTV Camera Components & Connectors | Jaideep Enterprises</title>
   <meta name="description" content="41 CCTV products across 7 categories — cables, connectors, enclosures, junction boxes, networking, power supplies, camera stands &amp; mounts. Ready stock, fast dispatch." />
+  <!-- SEO: Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Jaideep Enterprises" />
+  <meta property="og:title"       content="CCTV Camera Components &amp; Connectors | Jaideep Enterprises" />
+  <meta property="og:description" content="41 CCTV products across 7 categories — cables, connectors, enclosures, junction boxes, networking, power supplies &amp; mounts. Ready stock, 24h RFQ, OEM branding." />
+  <meta property="og:url"         content="https://jaideepenterprises.com/cctv-components.html" />
+  <meta property="og:image"       content="https://jaideepenterprises.com/cctv_components_hero_img.jpg" />
+  <meta property="og:locale"      content="en_IN" />
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="CCTV Camera Components &amp; Connectors | Jaideep Enterprises" />
+  <meta name="twitter:description" content="41 CCTV products across 7 categories — cables, connectors, enclosures, junction boxes, networking, power supplies &amp; mounts. Ready stock, 24h RFQ." />
+  <meta name="twitter:image"       content="https://jaideepenterprises.com/cctv_components_hero_img.jpg" />
+  <!-- SEO: Canonical + Robots -->
+  <link rel="canonical" href="https://jaideepenterprises.com/cctv-components.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="CCTV components, BNC connectors, RCA connectors, CCTV cables, junction boxes, camera mounts, power supplies, surveillance hardware, Bangalore, OEM CCTV parts" />
+  <meta name="author" content="Jaideep Enterprises" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -717,7 +735,126 @@
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+
+    /* ── Back to top ── */
+    #btt {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 44px; height: 44px;
+      background: var(--red);
+      border: none; border-radius: 50%;
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      opacity: 0; transform: translateY(14px);
+      transition: opacity .3s ease, transform .3s ease, background .2s;
+      z-index: 890;
+      box-shadow: 0 4px 18px rgba(232,41,28,0.35);
+    }
+    #btt.btt-show { opacity: 1; transform: translateY(0); }
+    #btt:hover { background: var(--red-bright); }
+
+    /* ── Lightbox ── */
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      cursor: zoom-out;
+      padding: 20px;
+    }
+    #lightbox.lb-open { display: flex; }
+    #lb-img {
+      max-width: 88vw;
+      max-height: 78vh;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 32px 96px rgba(0,0,0,0.8);
+      cursor: default;
+      animation: lb-in .22s ease;
+    }
+    #lb-caption {
+      margin-top: 14px;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: .05em;
+      text-align: center;
+      max-width: 500px;
+    }
+    #lb-close {
+      position: fixed;
+      top: 18px; right: 22px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 50%;
+      width: 38px; height: 38px;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      transition: background .2s;
+    }
+    #lb-close:hover { background: rgba(255,255,255,0.22); }
+    @keyframes lb-in {
+      from { opacity:0; transform:scale(0.93); }
+      to   { opacity:1; transform:scale(1); }
+    }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://jaideepenterprises.com/#business",
+        "name": "Jaideep Enterprises",
+        "description": "OEM-grade CCTV camera connectors, cables, enclosures, junction boxes, networking hardware, power supplies and mounting solutions. 27+ years of precision manufacturing, Bangalore HQ.",
+        "url": "https://jaideepenterprises.com/cctv-components.html",
+        "telephone": ["+916362604046", "+919343735699"],
+        "email": "support@jaideepenterprises.com",
+        "foundingDate": "1999",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "#12, 2nd Floor, No.6, Electronic(s) Plaza, 3rd Cross (P.R. Lane), S.P Road",
+          "addressLocality": "Bangalore",
+          "postalCode": "560002",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "12.9716",
+          "longitude": "77.5946"
+        },
+        "areaServed": "IN",
+        "priceRange": "$$",
+        "image": "https://jaideepenterprises.com/cctv_components_hero_img.jpg"
+      },
+      {
+        "@type": "ItemList",
+        "name": "CCTV Components Categories",
+        "description": "41 OEM-grade CCTV hardware products across 7 categories",
+        "numberOfItems": 7,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Cables" },
+          { "@type": "ListItem", "position": 2, "name": "Connectors" },
+          { "@type": "ListItem", "position": 3, "name": "Enclosures" },
+          { "@type": "ListItem", "position": 4, "name": "Junction Boxes" },
+          { "@type": "ListItem", "position": 5, "name": "Networking Series" },
+          { "@type": "ListItem", "position": 6, "name": "Power Supplies" },
+          { "@type": "ListItem", "position": 7, "name": "Stands & Mounts" }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -1780,6 +1917,68 @@
       obs.observe(c);
     });
   }());
+
+  // ── Lightbox ────────────────────────────────────────────────────
+  (function () {
+    var lb    = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lb-img');
+    var lbCap = document.getElementById('lb-caption');
+    function openLb(src, caption) {
+      lbImg.src = src;
+      lbCap.textContent = caption || '';
+      lb.classList.add('lb-open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLb() {
+      lb.classList.remove('lb-open');
+      document.body.style.overflow = '';
+      setTimeout(function () { lbImg.src = ''; }, 250);
+    }
+    document.getElementById('lb-close').addEventListener('click', closeLb);
+    lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && lb.classList.contains('lb-open')) closeLb();
+    });
+    // Expose so page-specific code can call openLb
+    window._openLightbox = openLb;
+  }());
+
+  // Wire lightbox to CCTV product card images
+  (function () {
+    document.querySelectorAll('.pcv2-img-wrap img').forEach(function (img) {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var card = img.closest('.product-card-v2');
+        var name = card ? (card.querySelector('.pcv2-name') || {}).textContent || '' : '';
+        var variant = card ? (card.querySelector('.pcv2-variant') || {}).textContent || '' : '';
+        window._openLightbox(img.src, name + (variant ? '  ·  ' + variant : ''));
+      });
+    });
+  }());
+
+  // ── Back to top ─────────────────────────────────────────────────
+  (function () {
+    var btn = document.getElementById('btt');
+    window.addEventListener('scroll', function () {
+      btn.classList.toggle('btt-show', window.scrollY > 420);
+    }, { passive: true });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }());
 </script>
+
+<!-- Back to top -->
+<button id="btt" aria-label="Back to top" title="Back to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- Lightbox overlay -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Product image viewer">
+  <button id="lb-close" aria-label="Close">&#x2715;</button>
+  <img id="lb-img" src="" alt="" />
+  <div id="lb-caption"></div>
+</div>
 </body>
 </html>
