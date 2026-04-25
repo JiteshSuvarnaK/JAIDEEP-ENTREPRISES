@@ -14,7 +14,12 @@
       "Bash(git rm *)",
       "Bash(git commit -m ' *)",
       "Bash(sed -n '1330,1345p' \"D:\\\\Jaideep Enterprises\\\\new1\\\\cctv-components.html\")",
-      "Bash(sed -n '1395,1415p' \"D:\\\\Jaideep Enterprises\\\\new1\\\\cctv-components.html\")"
+      "Bash(sed -n '1395,1415p' \"D:\\\\Jaideep Enterprises\\\\new1\\\\cctv-components.html\")",
+      "Bash(git revert *)",
+      "Bash(xargs ls *)",
+      "Bash(awk '{print $5, $9}')",
+      "Bash(awk '{sum += $5; print $5, $9} END {print \"TOTAL:\", sum}')",
+      "Bash(pip install *)"
     ]
   }
 }
