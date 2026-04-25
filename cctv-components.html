@@ -556,11 +556,12 @@
     .product-card-v2:hover::after { transform:scaleX(1); }
 
     .pcv2-img-wrap {
-      background:#1a1a1a;
-      height:190px; overflow:hidden;
+      background:#ffffff; padding:18px;
+      height:190px; display:flex;
+      align-items:center; justify-content:center; overflow:hidden;
     }
     .pcv2-img-wrap img {
-      width:100%; height:100%; object-fit:cover;
+      max-height:100%; max-width:100%; object-fit:contain;
       transition:transform 0.5s var(--ease);
     }
     .product-card-v2:hover .pcv2-img-wrap img { transform:scale(1.07); }
