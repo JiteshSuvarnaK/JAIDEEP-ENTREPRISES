@@ -1919,10 +1919,11 @@
   }());
 
   // ── Lightbox ────────────────────────────────────────────────────
-  (function () {
+  document.addEventListener('DOMContentLoaded', function () {
     var lb    = document.getElementById('lightbox');
     var lbImg = document.getElementById('lb-img');
     var lbCap = document.getElementById('lb-caption');
+    if (!lb) return;
     function openLb(src, caption) {
       lbImg.src = src;
       lbCap.textContent = caption || '';
@@ -1939,9 +1940,8 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && lb.classList.contains('lb-open')) closeLb();
     });
-    // Expose so page-specific code can call openLb
     window._openLightbox = openLb;
-  }());
+  });
 
   // Wire lightbox to CCTV product card images
   (function () {
@@ -1958,15 +1958,16 @@
   }());
 
   // ── Back to top ─────────────────────────────────────────────────
-  (function () {
+  document.addEventListener('DOMContentLoaded', function () {
     var btn = document.getElementById('btt');
+    if (!btn) return;
     window.addEventListener('scroll', function () {
       btn.classList.toggle('btt-show', window.scrollY > 420);
     }, { passive: true });
     btn.addEventListener('click', function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-  }());
+  });
 </script>
 
 <!-- Back to top -->
