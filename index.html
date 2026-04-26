@@ -375,6 +375,94 @@
       from { opacity:0; transform:scale(0.93); }
       to   { opacity:1; transform:scale(1); }
     }
+
+    /* ═══════════════════════════════════════════════════
+       MOBILE RESPONSIVE — index.html
+       All rules below only affect ≤768px / ≤480px.
+       Desktop (>768px) is completely unchanged.
+    ═══════════════════════════════════════════════════ */
+
+    /* ── Hamburger button ───────────────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 6px;
+      z-index: 201;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: rgba(250,250,248,0.88);
+      border-radius: 2px;
+      transition: transform 0.3s var(--ease), opacity 0.25s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── Mobile overlay menu ────────────────────────── */
+    .mob-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,10,8,0.98);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      padding: 80px 32px 48px;
+      backdrop-filter: blur(8px);
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu > a {
+      color: rgba(250,250,248,0.75);
+      font-size: 16px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: var(--font);
+      transition: color 0.2s, padding-left 0.2s;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      width: 100%;
+      max-width: 320px;
+      text-align: center;
+    }
+    .mob-menu > a:first-child { border-top: 1px solid rgba(201,168,76,0.1); }
+    .mob-menu > a:hover, .mob-menu > a:active { color: var(--gold); }
+    .mob-menu .btn { border-top: none; border-bottom: none; margin-top: 24px; justify-content: center; width: auto; padding: 13px 32px; }
+
+    /* ── Breakpoint 768px ───────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-hamburger { display: flex; }
+      .nav-links { display: none !important; }
+      .section { padding: 72px 0; }
+      .hero-content { padding: 110px 5vw 72px; }
+      .why-grid { gap: 24px; }
+      .about-grid { gap: 28px; }
+      .about-media { aspect-ratio: 16/9; }
+    }
+
+    /* ── Breakpoint 480px ───────────────────────────── */
+    @media (max-width: 480px) {
+      .section { padding: 52px 0; }
+      .hero-content { padding: 90px 5vw 52px; }
+      .caps { grid-template-columns: 1fr !important; }
+      .bridge-inner { padding: 26px 18px !important; gap: 22px; }
+      .btn-lg { padding: 13px 20px; font-size: 12px; }
+      .h-actions { flex-direction: column; gap: 10px; }
+      .h-actions .btn { width: 100%; justify-content: center; }
+      .footer-bottom { flex-direction: column; text-align: center; gap: 8px; }
+      .bridge-kicker { font-size: 9px; }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -441,7 +529,17 @@
     <li><a href="cctv-components.html">CCTV Components</a></li>
     <li><a class="btn btn-primary" href="#contact" style="padding:10px 18px;font-size:11px;">Get Quote</a></li>
   </ul>
+  <button class="nav-hamburger" id="navBurger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </nav>
+<div class="mob-menu" id="mobMenu">
+  <a href="#about">About</a>
+  <a href="#products">Products</a>
+  <a href="#why">Why Us</a>
+  <a href="#capability">Capability</a>
+  <a href="#contact">Contact</a>
+  <a href="cctv-components.html">CCTV Components</a>
+  <a href="#contact" class="btn btn-primary btn-lg">Get Quote</a>
+</div>
 
 <section class="hero" id="top">
   <div class="hero-bg" id="heroBg"></div>
@@ -1223,6 +1321,14 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
+
+// Hamburger menu toggle
+(function(){
+  var b=document.getElementById('navBurger'),m=document.getElementById('mobMenu');
+  if(!b||!m)return;
+  b.addEventListener('click',function(){b.classList.toggle('open');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){b.classList.remove('open');m.classList.remove('open');document.body.style.overflow='';});});
+})();
 </script>
 
 <!-- Back to top -->
