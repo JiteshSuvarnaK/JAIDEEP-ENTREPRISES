@@ -144,6 +144,8 @@
     }
     .nav-links a:hover { color: var(--white); }
     .nav-links a:hover::after { width: 100%; }
+    .nav-link-brass:hover { color: #c9a84c !important; text-shadow: 0 0 10px rgba(201,168,76,0.75), 0 0 22px rgba(201,168,76,0.38); }
+    .nav-link-brass::after { background: #c9a84c !important; }
 
     /* ── HERO — identical structure to brass page ── */
     .hero {
@@ -962,7 +964,7 @@
 <nav id="mainNav">
   <a class="brand" href="#top"><img src="main_logo_img.webp" alt="Jaideep Enterprises" style="height:57px;width:auto;display:block;"/></a>
   <ul class="nav-links">
-    <li><a href="index.html">← Main Site</a></li>
+    <li><a class="nav-link-brass" href="index.html">← Main Site</a></li>
     <li><a href="#parts">Components</a></li>
     <li><a href="#value">Why Us</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -971,7 +973,7 @@
   <button class="nav-hamburger" id="navBurger" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
 </nav>
 <div class="mob-menu" id="mobMenu">
-  <a href="index.html">← Main Site</a>
+  <a class="nav-link-brass" href="index.html">← Main Site</a>
   <a href="#parts">Components</a>
   <a href="#value">Why Us</a>
   <a href="#contact">Contact</a>
