@@ -23,7 +23,8 @@
       "Bash(awk *)",
       "Bash(perl -i -pe 's|href=\"data:image/x-icon;base64,[^\"]*\"|href=\"favicon.ico\"|g' \"D:/Jaideep Enterprises/new1/index.html\")",
       "Bash(perl -i -pe \"s|url\\\\\\\\\\('data:image/jpeg;base64,[^']*'\\\\\\\\\\)|url\\('about_img.webp'\\)|g\" \"D:/Jaideep Enterprises/new1/index.html\")",
-      "Bash(perl -i -pe 's|href=\"data:image/x-icon;base64,[^\"]*\"|href=\"favicon.ico\"|g' \"D:/Jaideep Enterprises/new1/cctv-components.html\")"
+      "Bash(perl -i -pe 's|href=\"data:image/x-icon;base64,[^\"]*\"|href=\"favicon.ico\"|g' \"D:/Jaideep Enterprises/new1/cctv-components.html\")",
+      "PowerShell(python -c \"from PIL import Image; img = Image.open\\('D:/Jaideep Enterprises/new1/main_logo_img.png'\\); img.save\\('D:/Jaideep Enterprises/new1/main_logo_img.webp', 'WEBP', quality=90, method=6\\); print\\('done'\\)\")"
     ]
   }
 }
