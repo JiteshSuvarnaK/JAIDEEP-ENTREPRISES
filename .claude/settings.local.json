@@ -19,7 +19,11 @@
       "Bash(xargs ls *)",
       "Bash(awk '{print $5, $9}')",
       "Bash(awk '{sum += $5; print $5, $9} END {print \"TOTAL:\", sum}')",
-      "Bash(pip install *)"
+      "Bash(pip install *)",
+      "Bash(awk *)",
+      "Bash(perl -i -pe 's|href=\"data:image/x-icon;base64,[^\"]*\"|href=\"favicon.ico\"|g' \"D:/Jaideep Enterprises/new1/index.html\")",
+      "Bash(perl -i -pe \"s|url\\\\\\\\\\('data:image/jpeg;base64,[^']*'\\\\\\\\\\)|url\\('about_img.webp'\\)|g\" \"D:/Jaideep Enterprises/new1/index.html\")",
+      "Bash(perl -i -pe 's|href=\"data:image/x-icon;base64,[^\"]*\"|href=\"favicon.ico\"|g' \"D:/Jaideep Enterprises/new1/cctv-components.html\")"
     ]
   }
 }
